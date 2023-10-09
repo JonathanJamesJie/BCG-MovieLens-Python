@@ -20,6 +20,7 @@ dfmovies = pd.read_csv(
 
 ## Checking for proper import
 dfmovies.head()
+[[https://github.com/JonathanJamesJie/BCG-MovieLens-Python/blob/main/png/Movies.head.PNG]]
 
 ## Exploratory Data Analysis on dfmovies - Check for number of records in each column, data having null or not null, Data type
 dfmovies.info()
