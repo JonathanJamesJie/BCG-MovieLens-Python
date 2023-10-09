@@ -1,0 +1,44 @@
+Exploratory Data Analysis (EDA)
+
+## Importing the necessary libraries 
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
+## Importing movie dataset .dat
+dfmovies = pd.read_csv(
+    'C:/Users/Jonathan Jie/My Python Stuff/movies.dat',
+    delimiter='::',
+    header=None,
+    names=['MovieID', 'Title', 'Genres'],
+    engine='python',
+    encoding='ISO-8859-1'
+)
+
+## Checking for proper import
+dfmovies.head()
+
+## Exploratory Data Analysis on dfmovies - Check for number of records in each column, data having null or not null, Data type
+dfmovies.info()
+
+check for Duplication
+dfmovies.nunique()
+
+Missing Values Calculation
+dfmovies.isnull().sum()
+
+Repeat import and EDA for 2 more datasets
+
+## Each CSV seems clean so no further need for data cleaning.
+## Time to move onto merging into a single Data Frame.
+##First Merge on Movie ID
+movie_ratings = pd.merge(dfmovies,dfratings,on = 'MovieID')
+
+## Second merge to get Master_Data Data Frame
+Master_Data = pd.merge(movie_ratings,dfusers, on = 'UserID')
+
+## Trim the Data frame of unused columns
+Master_Data = Master_Data[['MovieID', 'Title', 'UserID', 'Age', 'Gender', 'Occupation', 'Rating','Zip-code','Genres']]
