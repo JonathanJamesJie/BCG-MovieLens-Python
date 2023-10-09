@@ -138,17 +138,20 @@ dfmovies = pd.read_csv(
 
 ## Checking for proper import
 dfmovies.head()
+
 ![Movies head](https://github.com/JonathanJamesJie/BCG-MovieLens-Python/assets/139092596/d28a0117-58c5-47c2-a2d2-3d879ce98564)
 
 ## Exploratory Data Analysis on dfmovies - Check for number of records in each column, data having null or not null, Data type
 dfmovies.info()
+
 ![moviesinfo](https://github.com/JonathanJamesJie/BCG-MovieLens-Python/assets/139092596/2753aba7-4894-4b54-9e08-74b0421d35c8)
 
 check for Duplication
 dfmovies.nunique()
 
 Missing Values Calculation
-dfmovies.isnull().sum()
+dfmovies.isnull().sum
+
 ![movies isnull](https://github.com/JonathanJamesJie/BCG-MovieLens-Python/assets/139092596/87658b96-9de1-4ef1-a5c4-07f21db08999)
 
 Repeat import and EDA for 2 more datasets
